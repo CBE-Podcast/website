@@ -16,3 +16,7 @@ Static HTML/CSS/JS site ready for GitHub and Cloudflare Pages.
 - Confirm the exact season-two premiere date before adding a live countdown.
 
 The uploaded transparent logo is displayed on a pale background to ensure contrast with its dark gray lettering.
+
+
+## Version 2 (October 2026)
+The approved host-and-logo artwork is at `assets/hero-banner.png`. The homepage uses it as a full-width banner, with a dark-green floor glow bleeding into the intro and subsequent sections. Upload all files from this folder to the root of the GitHub repository; keep the `assets` directory intact. Existing links marked as placeholders should be replaced with official destinations.
