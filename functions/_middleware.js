@@ -1,0 +1,1 @@
+export async function onRequest(context){const res=await context.next();const type=res.headers.get('content-type')||'';if(!type.includes('text/html'))return res;const key=context.env.TURNSTILE_SITE_KEY||'';let html=await res.text();html=html.replaceAll('__TURNSTILE_SITE_KEY__',key.replace(/[^a-zA-Z0-9_-]/g,''));return new Response(html,{status:res.status,headers:res.headers});}
