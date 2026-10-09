@@ -1,3 +1,7 @@
+V10 — Hero logo sizing and replacement fix
+
+The original logo is used once as an independently rotating layer over the logo-free hero-background.png. The static hero-banner.png is retained only as an unused source asset; it is NOT rendered on the homepage. CSS now explicitly overrides the general hero image width rule, preventing the seal from expanding to full-screen width.
+
 # Certified Bad Example — V08
 
 Deploy the **contents of this ZIP** at the root of `CBE-Podcast/website` (not an enclosing folder). Cloudflare Pages Functions require Git-based deployment or another method that deploys the `functions/` directory. Remove old `guest.html`, `submit.html`, and `functions/api/submit.js` from the repository if uploading files individually: they are intentionally excluded from V08.
