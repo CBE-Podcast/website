@@ -1,22 +1,16 @@
-# Certified Bad Example website
+# V04 — Certified Bad Example
 
-Static HTML/CSS/JS site ready for GitHub and Cloudflare Pages.
+Upload the contents of this ZIP to the root of the CBE-Podcast/website repository; Cloudflare Pages will deploy the static site.
 
-## Publish
-1. Create a new GitHub repository named `certified-bad-example`.
-2. Upload `index.html`, `styles.css`, `script.js`, and the `assets` folder to the repository root.
-3. In Cloudflare, go to Workers & Pages → Create → Pages → Connect to Git.
-4. Select the repository. Set framework preset to **None**, build command blank, and output directory to `/` (repository root). Deploy.
-5. Connect your custom domain in Cloudflare Pages after verifying the deployment.
+## Connected destinations
+- YouTube: https://www.youtube.com/@CertifiedBadExamplePodcast
+- Apple Podcasts: https://podcasts.apple.com/us/podcast/certified-bad-example-podcast/id1891465123
+- Spotify: https://open.spotify.com/show/1NpJSMO56lSqh73CsW2lV0
+- Instagram: https://www.instagram.com/certifiedbadexample/
+- Captivate donations: https://certified-bad-example.captivate.fm/support
+- Story submissions: cbe_podcast@yahoo.com
 
-## Before going live
-- Replace the YouTube search URL with the official channel or episode URL.
-- Replace `hello@example.com` placeholders with your official contact address or form provider.
-- Add real host portraits, episode art, links, and any approved support link.
-- Confirm the exact season-two premiere date before adding a live countdown.
-
-The uploaded transparent logo is displayed on a pale background to ensure contrast with its dark gray lettering.
-
-
-## Version 2 (October 2026)
-The approved host-and-logo artwork is at `assets/hero-banner.png`. The homepage uses it as a full-width banner, with a dark-green floor glow bleeding into the intro and subsequent sections. Upload all files from this folder to the root of the GitHub repository; keep the `assets` directory intact. Existing links marked as placeholders should be replaced with official destinations.
+## Remaining setup
+- Latest Mess shows a YouTube channel button until `latestYouTubeVideoId` is filled in with a verified 11-character video ID; then it embeds the video. It does not automatically track new uploads.
+- The 19 Season One episode cards are placeholders pending verified titles and individual episode links.
+- The submission form opens a pre-filled email in the visitor's mail application. It is not a server-side submission form; visitors must press Send in their email client.
