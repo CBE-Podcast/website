@@ -1,3 +1,9 @@
+# Certified Bad Example — V13
+
+Hero correction: V12 grey center darkened to charcoal-black with soft edge blending. Logo is positioned by a stationary center anchor (left 50%, top 43%, width 25% of hero), with rotation applied only to the nested logo image. This prevents the animation transform from shifting the logo. Cache-busted background.
+
+Deploy contents at repository root, replacing existing files. The static hero-banner.png is an unused source asset; the site uses hero-background.png and a single separate original logo layer.
+
 # Certified Bad Example — V12
 
 Updated hero backdrop: softly blended neutral grey area centered between hosts, obscuring prior logo artifacts. The independent original seal remains the sole rotating logo, sized at 27% of hero width, centered at 50% horizontal and 43% vertical, rotating every 12 seconds. Background URL cache-busted.
