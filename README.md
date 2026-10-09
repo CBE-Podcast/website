@@ -1,22 +1,18 @@
-# Certified Bad Example — V07
+# Certified Bad Example — V08
 
-Upload the **contents** of this ZIP (not the enclosing V07_build folder) to the root of `CBE-Podcast/website` on GitHub. Deploy using **Cloudflare Pages with Functions enabled**.
+Deploy the **contents of this ZIP** at the root of `CBE-Podcast/website` (not an enclosing folder). Cloudflare Pages Functions require Git-based deployment or another method that deploys the `functions/` directory. Remove old `guest.html`, `submit.html`, and `functions/api/submit.js` from the repository if uploading files individually: they are intentionally excluded from V08.
 
-## V07 changes
-- Expanded home intro, centered hosts with a single larger pride-themed sparkle, refined episode carousel preserving full artwork.
-- Latest video uses the YouTube Data API to select **only videos at least 10 minutes long**, skipping Shorts. Inline privacy-enhanced player plus separate YouTube pop-out and subscription links. The 10-minute threshold can exclude shorter legitimate episodes.
-- Expanded host pages (August's award-winning voice acting emphasized; no Fathernetics references on Jameel's page).
-- Submit dropdown: Submit a Story / Be a Guest. Both forms have appropriate fields, Instagram links, server-side Turnstile verification and direct email delivery.
-- Dedicated branded Support page with external Captivate checkout only.
-- Thank-you toast appears **only after the email service accepts the message**.
+## Changes
+- All story and guest forms removed, including navigation links, home submission panel, and submission endpoint. No email or CAPTCHA setup needed.
+- Home headline remains on one line using responsive font scaling.
+- Host names use separate first-name serif and last-name sans-serif styles; each name spins exactly twice on hover/focus (honors reduced-motion settings).
+- Single centered support panel.
+- Episode archive remains visible with cached episodes (browser localStorage + Cloudflare edge cache), static horizontal scrolling and navigation arrows. No fallback message. Artwork is not cropped.
+- Latest video is restricted to **public, embeddable, published videos at least 10 minutes long** from the official YouTube uploads playlist. Excludes Shorts and live streams; 10-minute threshold may exclude shorter legitimate long-form episodes. Server and browser caches retain last verified results. When none is known, show the branded placeholder.
 
-## REQUIRED deployment configuration (Cloudflare Pages > Settings > Variables and Secrets)
-1. `TURNSTILE_SITE_KEY`: Cloudflare Turnstile **public** site key for your production domain.
-2. `TURNSTILE_SECRET_KEY`: matching Turnstile **secret**, set as encrypted secret.
-3. `RESEND_API_KEY`: email API key from Resend, set as encrypted secret.
-4. `FROM_EMAIL`: sender address from a domain you own and have **verified with Resend** (e.g. `Certified Bad Example <submissions@yourdomain.example>`). The receiving address is `cbe_podcast@yahoo.com` and is set in `functions/api/submit.js`. **Do not set FROM_EMAIL to the Yahoo address unless you control and can verify that sending domain.**
-5. `YOUTUBE_API_KEY`: Google YouTube Data API v3 key (set as secret). Without this, latest video falls back to a YouTube channel link rather than risking showing Shorts.
+## Cloudflare settings
+Set `YOUTUBE_API_KEY` as a secret under Pages > Settings > Variables and Secrets; redeploy. Optionally set `YOUTUBE_CHANNEL_ID` to the official channel's UC... ID for more reliable lookups (otherwise the function tries to discover it). A YouTube API key is needed for automatic selection. Without it the placeholder remains unless you set `latestYouTubeVideoId` in `site-config.js` to a **verified public long-form episode**. Never put API secrets into `site-config.js`.
 
-Set variables in production and preview as needed, then redeploy. Turnstile will not render or allow form submission until the site key is configured. Forms will return a clear configuration error until the secrets and verified sender are set. Rate limiting should additionally be enabled using Cloudflare WAF rules for `/api/submit` (the function already verifies CAPTCHA and has a honeypot).
+The channel's latest public uploads are inspected, rather than unpublished or scheduled videos. YouTube API limits and browser embed policies may still prevent playback for some viewers.
 
-**Notes:** The email provider accepting a message does not guarantee inbox placement. Captivate's external support URL should be checked against your account's live support settings. The YouTube API quota and duration threshold may need adjustment. No awards, credits, or other biographical claims beyond user-provided details were invented.
+No Resend key, sender domain, form recipient, or Turnstile setup is required for V08.
