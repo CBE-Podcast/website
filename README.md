@@ -1,3 +1,9 @@
+# Certified Bad Example — V12
+
+Updated hero backdrop: softly blended neutral grey area centered between hosts, obscuring prior logo artifacts. The independent original seal remains the sole rotating logo, sized at 27% of hero width, centered at 50% horizontal and 43% vertical, rotating every 12 seconds. Background URL cache-busted.
+
+Deploy the ZIP contents at repository root; replace older files.
+
 V10 — Hero logo sizing and replacement fix
 
 The original logo is used once as an independently rotating layer over the logo-free hero-background.png. The static hero-banner.png is retained only as an unused source asset; it is NOT rendered on the homepage. CSS now explicitly overrides the general hero image width rule, preventing the seal from expanding to full-screen width.
@@ -23,3 +29,6 @@ No Resend key, sender domain, form recipient, or Turnstile setup is required for
 
 
 V09 changes: standalone rotating original CBE logo on homepage (background seal covered), Hollywood-style host typography and passing shimmer, compact one-line season announcement, responsive one-line host taglines, and cross-links between host profiles. Respect reduced-motion settings. No forms.
+
+
+V11: Replaced the baked-in stationary logo remnants in the hero background with a clean dark textured wall. The original independent logo layer continues rotating. Cache-busted hero background reference.

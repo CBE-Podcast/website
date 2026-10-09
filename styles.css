@@ -46,3 +46,7 @@
 
 /* V10: ensure the seal is a single bounded animated layer, not a full-width hero image. */
 .hero{isolation:isolate;overflow:hidden}.hero > img.hero-people{width:100%;max-width:100%;height:auto}.hero > img.hero-spin-logo{width:34%;max-width:34%;min-width:0;object-fit:contain;aspect-ratio:1/1}@media(max-width:760px){.hero > img.hero-spin-logo{width:34%;max-width:34%}}
+
+/* V12: grey neutral backdrop and center-locked rotating seal. */
+.hero > img.hero-spin-logo{width:27%;max-width:27%;left:50%;top:43%;aspect-ratio:1/1;object-fit:contain;transform-origin:50% 50%;filter:drop-shadow(0 0 9px rgba(135,255,110,.28))}
+@media(max-width:760px){.hero > img.hero-spin-logo{width:27%;max-width:27%}}
