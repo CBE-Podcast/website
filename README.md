@@ -16,3 +16,6 @@ Set `YOUTUBE_API_KEY` as a secret under Pages > Settings > Variables and Secrets
 The channel's latest public uploads are inspected, rather than unpublished or scheduled videos. YouTube API limits and browser embed policies may still prevent playback for some viewers.
 
 No Resend key, sender domain, form recipient, or Turnstile setup is required for V08.
+
+
+V09 changes: standalone rotating original CBE logo on homepage (background seal covered), Hollywood-style host typography and passing shimmer, compact one-line season announcement, responsive one-line host taglines, and cross-links between host profiles. Respect reduced-motion settings. No forms.

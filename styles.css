@@ -21,3 +21,25 @@
 @media(prefers-reduced-motion:reduce){.host-links .host-name:hover,.host-links .host-name:focus-visible{animation:none}}
 /* Content must remain visible even if observer scripts or animation initialization fail. */
 .reveal{opacity:1!important;filter:none!important;transform:none!important}
+
+/* V09 cinematic host names */
+.host-links .host-name{position:relative;overflow:hidden;isolation:isolate;font-size:clamp(28px,4.15vw,62px);text-decoration:none;animation:none!important;transition:filter .25s ease}
+.host-links .first-name{font-family:Georgia,'Times New Roman',serif;font-style:normal;font-weight:700;letter-spacing:-.035em}
+.host-links .last-name{font-family:'Arial Narrow',Impact,Arial,sans-serif;font-style:normal;font-weight:800;letter-spacing:-.045em}
+.host-links .host-name::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(105deg,transparent 35%,rgba(255,249,214,.05) 43%,rgba(255,242,183,.72) 49%,rgba(255,255,255,.85) 50%,rgba(255,242,183,.15) 56%,transparent 64%);transform:translateX(-160%);mix-blend-mode:screen}
+.host-links .host-name:hover::after,.host-links .host-name:focus-visible::after{animation:host-shimmer 1.2s ease-out 1}
+@keyframes host-shimmer{from{transform:translateX(-160%)}to{transform:translateX(160%)}}
+/* V09 announcement */
+.season h2{font-size:clamp(10px,2.35vw,37px);white-space:nowrap;letter-spacing:-.045em;line-height:1.2}
+/* V09 rotating original logo as its own layer */
+.hero{position:relative}.hero-people{display:block;width:100%;height:auto}
+.hero-spin-logo{position:absolute;width:27.5%;height:auto;left:50%;top:39.7%;transform:translate(-50%,-50%);transform-origin:center;animation:hero-seal-spin 12s linear infinite;filter:drop-shadow(0 0 15px #68ff3a80);z-index:2;pointer-events:none}
+@keyframes hero-seal-spin{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+/* Host profile headings always stay on a single line within the content width */
+.inner.wide h3{white-space:nowrap;font-size:clamp(8px,1.95vw,22px);letter-spacing:-.025em}
+/* Host-to-host navigation */
+.host-crosslink{margin-top:48px;padding:22px 0;border-top:1px solid #31532c;display:flex;align-items:center;gap:18px;text-decoration:none;color:#f2f6eb;font-weight:800;font-size:clamp(13px,1.5vw,19px);line-height:1.35}
+.host-crosslink img{width:70px;height:70px;border-radius:50%;object-fit:cover;object-position:center;border:1px solid #6ae73f}
+.host-crosslink span{position:relative;overflow:hidden}.host-crosslink:hover,.host-crosslink:focus-visible{color:var(--green)}
+@media(max-width:760px){.host-links .host-name{font-size:clamp(26px,6vw,38px)}.season h2{font-size:clamp(9px,2.65vw,22px)}.inner.wide h3{font-size:clamp(8px,2vw,16px)}}
+@media(prefers-reduced-motion:reduce){.hero-spin-logo,.host-links .host-name:hover::after,.host-links .host-name:focus-visible::after{animation:none!important}}
