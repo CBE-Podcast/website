@@ -79,3 +79,14 @@
 /* v25: remove only host contact container border; separate first and last names */
 .host-email-contact{border:none;border-radius:0;}
 #hosts .host-links a.host-name{gap:calc(.24em + 12px);}
+
+/* V26: fixed transparent host illustrations, original page background retained. */
+.host-profile{position:relative;isolation:isolate}
+.host-profile .host-portrait{position:fixed;bottom:0;top:88px;width:clamp(310px,35vw,580px);pointer-events:none;background-repeat:no-repeat;background-size:contain;background-position:center bottom;z-index:-1}
+.host-profile-jameel .host-portrait{right:0;background-image:url("assets/jameel-anime.png")}
+.host-profile-august .host-portrait{left:0;background-image:url("assets/august-anime.png")}
+.host-profile .inner.wide{position:relative;max-width:min(720px,56vw)}
+.host-profile-jameel .inner.wide{margin-left:clamp(24px,7vw,130px);margin-right:auto}
+.host-profile-august .inner.wide{margin-right:clamp(24px,7vw,130px);margin-left:auto}
+@media(max-width:1000px){.host-profile .host-portrait{opacity:.25;width:46vw}.host-profile .inner.wide{max-width:760px;margin:70px auto}}
+@media(max-width:760px){.host-profile .host-portrait{top:76px;width:80vw;opacity:.13}.host-profile .inner.wide{max-width:100%;margin:70px auto}}

@@ -40,3 +40,5 @@ V24: Homepage host name typography increased contrast (script first names; heavy
 
 
 Version 25: Removed the outer border and corner rounding on host contact sections for Jameel and August; increased first-to-last-name gap by 12px on homepage host buttons. No other intentional design changes.
+
+V26: Fixed transparent anime portraits on respective host pages. No other website changes.
