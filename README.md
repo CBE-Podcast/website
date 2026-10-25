@@ -25,3 +25,7 @@ Changes from v17:
 IMPORTANT: The guest/story forms still require Cloudflare Turnstile and Resend environment variables
 (TURNSTILE_SECRET_KEY, RESEND_API_KEY, FROM_EMAIL). This package does not configure
 those services or modify DNS or Yahoo settings.
+
+Version 19: Added dedicated mailto contact buttons and visible email addresses on Jameel and August host pages.
+
+Version 20: Redesigned homepage host-name links with dramatically contrasting italic serif first names and uppercase condensed sans-serif surnames, raised beveled button borders and accessible focus/hover/press states. Removed decorative icon between host links.

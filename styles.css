@@ -53,3 +53,21 @@
   html.js-reveal .reveal.in-view > :is(h1,h2,p,.socials,.host-links,.video-shell,.latest-actions,.season-picker,.carousel-controls,.marquee,.button):nth-child(3) {animation-delay:.18s;}
   @keyframes cbe-rise {from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 }
+
+/* Host contact links */
+.host-email-contact{margin:30px 0 26px;padding:22px 24px;border:1px solid rgba(128,128,128,.35);border-radius:14px;max-width:560px}
+.host-email-contact .eyebrow{margin:0 0 15px}
+.host-email-contact p:last-child{margin:14px 0 0;overflow-wrap:anywhere}
+.host-email-contact p:last-child a{color:inherit;text-underline-offset:3px}
+.host-email-button{display:inline-flex;align-items:center;justify-content:center}
+
+/* v20: clearly interactive raised host name cards, contrasting typography */
+.hosts .host-links{display:flex;justify-content:center;align-items:center;gap:clamp(16px,3vw,42px);flex-wrap:wrap}
+.hosts .host-links .host-name{display:inline-flex;align-items:baseline;justify-content:center;gap:.24em;white-space:nowrap;padding:clamp(15px,2vw,25px) clamp(20px,3vw,40px);background:linear-gradient(155deg,#213823 0%,#111d13 65%,#0b130c 100%);border:2px solid #658d54;border-top-color:#b1e09b;border-left-color:#9cc88a;border-bottom-color:#355033;border-right-color:#355033;border-radius:13px;box-shadow:inset 0 2px 0 #ffffff16,inset 0 -3px 0 #0008,0 7px 0 #203b20,0 13px 22px #0009;cursor:pointer;transform:none;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease,background .18s ease;animation:none!important}
+.hosts .host-links .first-name{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-weight:500;letter-spacing:-.065em;font-size:1em;text-transform:none}
+.hosts .host-links .last-name{font-family:Impact,'Arial Narrow',Arial,sans-serif;font-style:normal;font-weight:900;letter-spacing:.005em;font-size:1.05em;text-transform:uppercase}
+.hosts .host-links .host-name:hover,.hosts .host-links .host-name:focus-visible{color:var(--text);background:linear-gradient(155deg,#2b4b2c,#172a18);border-color:var(--green);transform:translateY(-3px);box-shadow:inset 0 2px 0 #ffffff20,0 10px 0 #203b20,0 19px 28px #000a;outline-offset:5px}
+.hosts .host-links .host-name:active{transform:translateY(5px);box-shadow:inset 0 2px 7px #0008,0 2px 0 #203b20,0 5px 10px #0009}
+.hosts .host-links .host-name::after{display:none}
+@media(max-width:760px){.hosts .host-links{flex-direction:column;gap:23px}.hosts .host-links .host-name{font-size:clamp(24px,6vw,38px);width:min(100%,390px);padding:17px 14px}}
+@media(prefers-reduced-motion:reduce){.hosts .host-links .host-name{transition:none}}
