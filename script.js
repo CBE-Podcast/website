@@ -1,3 +1,18 @@
+// Preserve the browser's position when returning with Back/Forward, but start
+// fresh visits and reloads at the top of the page.
+(() => {
+  const navigation = performance.getEntriesByType('navigation')[0];
+  const isHistoryReturn = navigation?.type === 'back_forward';
+  if (isHistoryReturn) return;
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  const toTop = () => window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  toTop();
+  window.addEventListener('pageshow', () => {
+    toTop();
+    requestAnimationFrame(() => requestAnimationFrame(toTop));
+  });
+  window.addEventListener('load', toTop, { once: true });
+})();
 // Always begin at the top on a fresh load or refresh, including browser back/forward restoration.
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 function resetPageScroll() { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); }

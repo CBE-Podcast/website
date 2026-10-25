@@ -32,3 +32,8 @@ Version 20: Redesigned homepage host-name links with dramatically contrasting it
 
 
 Version 21: Updated homepage hero banner with approved Japanese anime-style artwork. Both WebP and PNG source included. Updated homepage cache version. All other features preserved.
+
+Version 23: Fresh navigation and reload start at top; Back/Forward history navigation retains prior scroll position. All visual design and other functionality preserved.
+
+
+V24: Homepage host name typography increased contrast (script first names; heavy condensed uppercase surnames); stylesheet cache-busted. No other visual/content changes.
