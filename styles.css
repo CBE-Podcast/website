@@ -75,3 +75,7 @@
 /* v24: deliberately contrasting first/last-name lettering on homepage */
 #hosts .host-links a.host-name > span.first-name {font-family:"Brush Script MT","Segoe Script","URW Chancery L",cursive!important;font-size:1.12em!important;font-style:italic!important;font-weight:400!important;letter-spacing:-.045em!important;text-transform:none!important;}
 #hosts .host-links a.host-name > span.last-name {font-family:Impact,"Arial Narrow","Arial Black",sans-serif!important;font-size:1.06em!important;font-style:normal!important;font-weight:900!important;letter-spacing:.025em!important;text-transform:uppercase!important;}
+
+/* v25: remove only host contact container border; separate first and last names */
+.host-email-contact{border:none;border-radius:0;}
+#hosts .host-links a.host-name{gap:calc(.24em + 12px);}

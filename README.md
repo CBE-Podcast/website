@@ -37,3 +37,6 @@ Version 23: Fresh navigation and reload start at top; Back/Forward history navig
 
 
 V24: Homepage host name typography increased contrast (script first names; heavy condensed uppercase surnames); stylesheet cache-busted. No other visual/content changes.
+
+
+Version 25: Removed the outer border and corner rounding on host contact sections for Jameel and August; increased first-to-last-name gap by 12px on homepage host buttons. No other intentional design changes.
