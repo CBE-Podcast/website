@@ -1,3 +1,27 @@
-Certified Bad Example — V15
+Certified Bad Example — Website package v18 (October 25, 2026)
 
-Homepage hero updated with approved Jameel and August banner. Original files retained. All other pages and functionality unchanged. Deploy contents of website-main at site root.
+Deploy the CONTENTS of this ZIP to the existing Cloudflare Pages project (site root).
+
+Public website: https://certifiedbadexample.com/
+www alias: https://www.certifiedbadexample.com/
+Links hub: https://certifiedbadexample.com/links/
+
+Public contact addresses:
+  hello@certifiedbadexample.com — general podcast inquiries
+  jameel@certifiedbadexample.com — Jameel
+  august@certifiedbadexample.com — August
+
+Incoming email routes through Cloudflare Email Routing to the existing Yahoo inbox.
+Outbound correspondence uses the Yahoo account with its Reply-To set to hello@certifiedbadexample.com.
+The Yahoo account address is intentionally not published on the website.
+
+Changes from v17:
+- Publish hello@certifiedbadexample.com as the general contact on site pages and the links hub.
+- Update the public submissionEmail setting to hello@certifiedbadexample.com.
+- Route form submission notifications to hello@certifiedbadexample.com via Cloudflare forwarding.
+- Point links-hub official website reference to the custom domain.
+- Preserve all existing page layouts, branding, navigation, and episode functions.
+
+IMPORTANT: The guest/story forms still require Cloudflare Turnstile and Resend environment variables
+(TURNSTILE_SECRET_KEY, RESEND_API_KEY, FROM_EMAIL). This package does not configure
+those services or modify DNS or Yahoo settings.

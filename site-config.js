@@ -7,6 +7,6 @@ window.CBE = {
   latestYouTubeVideoId: '', // Add the 11-character ID of the latest episode to embed it here.
   captivateDonation: 'https://certified-bad-example.captivate.fm/support',
   captivate: 'https://certified-bad-example.captivate.fm',
-  submissionEmail: 'cbe_podcast@yahoo.com',
+  submissionEmail: 'hello@certifiedbadexample.com',
   episodes: [] // Fetched from the official Captivate RSS feed by /api/episodes.
 };

@@ -1,4 +1,4 @@
-const RECIPIENT='cbe_podcast@yahoo.com';
+const RECIPIENT='hello@certifiedbadexample.com';
 const esc=s=>String(s??'').slice(0,5000).replace(/[\r\n]+/g,' ').trim();
 export async function onRequestPost({request,env}){
  const json=(data,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store'}});
