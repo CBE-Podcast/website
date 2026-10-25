@@ -1,3 +1,8 @@
+// Always begin at the top on a fresh load or refresh, including browser back/forward restoration.
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+function resetPageScroll() { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); }
+window.addEventListener('pageshow', () => { resetPageScroll(); requestAnimationFrame(resetPageScroll); });
+window.addEventListener('load', resetPageScroll);
 const C=window.CBE||{};
 const nav=document.querySelector('#nav'),toggle=document.querySelector('.menu-toggle');
 const closeDrops=()=>document.querySelectorAll('.nav-group.open').forEach(g=>{g.classList.remove('open');g.querySelector('.nav-drop')?.setAttribute('aria-expanded','false')});
@@ -26,5 +31,11 @@ document.querySelector('#episode-prev')?.addEventListener('click',()=>marquee?.s
 document.querySelector('#episode-next')?.addEventListener('click',()=>marquee?.scrollBy({left:520,behavior:'smooth'}));
 loadEpisodes();
 const support=document.querySelector('#support-links');if(support&&C.captivateDonation){const a=document.createElement('a');a.className='button';a.textContent='SUPPORT VIA CAPTIVATE ↗';a.href=C.captivateDonation;a.target='_blank';a.rel='noopener';support.append(a)}
-if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(e=>e.target.classList.toggle('in-view',e.isIntersecting)),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el))}else document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in-view'));
+if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.documentElement.classList.add('js-reveal');
+  const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+    if (entry.isIntersecting) {entry.target.classList.add('in-view'); observer.unobserve(entry.target);}
+  }), {threshold:0.08, rootMargin:'0px 0px -35px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => {if (el.classList.contains('hero')) el.classList.add('in-view'); else observer.observe(el);});
+} else document.querySelectorAll('.reveal').forEach(el => el.classList.add('in-view'));
 

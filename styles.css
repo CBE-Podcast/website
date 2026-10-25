@@ -42,3 +42,14 @@
 
 
 
+
+/* v17: progressive, accessible scroll reveal */
+@media (prefers-reduced-motion: no-preference) {
+  html.js-reveal .reveal:not(.hero):not(.in-view) {opacity:0!important;filter:blur(4px)!important;transform:translateY(30px)!important;}
+  html.js-reveal .reveal.in-view {opacity:1!important;filter:none!important;transform:none!important;transition:opacity .85s ease,filter .85s ease,transform .85s cubic-bezier(.2,.7,.2,1)!important;}
+  html.js-reveal .hero {opacity:1!important;filter:none!important;transform:none!important;}
+  html.js-reveal .reveal.in-view > :is(h1,h2,p,.socials,.host-links,.video-shell,.latest-actions,.season-picker,.carousel-controls,.marquee,.button) {animation:cbe-rise .7s both;}
+  html.js-reveal .reveal.in-view > :is(h1,h2,p,.socials,.host-links,.video-shell,.latest-actions,.season-picker,.carousel-controls,.marquee,.button):nth-child(2) {animation-delay:.10s;}
+  html.js-reveal .reveal.in-view > :is(h1,h2,p,.socials,.host-links,.video-shell,.latest-actions,.season-picker,.carousel-controls,.marquee,.button):nth-child(3) {animation-delay:.18s;}
+  @keyframes cbe-rise {from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+}
