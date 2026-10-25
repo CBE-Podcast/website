@@ -29,3 +29,6 @@ those services or modify DNS or Yahoo settings.
 Version 19: Added dedicated mailto contact buttons and visible email addresses on Jameel and August host pages.
 
 Version 20: Redesigned homepage host-name links with dramatically contrasting italic serif first names and uppercase condensed sans-serif surnames, raised beveled button borders and accessible focus/hover/press states. Removed decorative icon between host links.
+
+
+Version 21: Updated homepage hero banner with approved Japanese anime-style artwork. Both WebP and PNG source included. Updated homepage cache version. All other features preserved.
